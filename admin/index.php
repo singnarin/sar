@@ -82,10 +82,14 @@ session_start();
  		background-color: #FFFFFF;
 	}
 </style>
+<link href="css/font-awesome.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 <body>
 <?php
 	if ($_SESSION['ses_username']=="56010000"){	
 		$selschool = mysql_query("SELECT * FROM `tbschool` ") or die  (mysql_error());
+		$selschoolOK = mysql_query("SELECT * FROM `tbschool` WHERE `status` = 1") or die  (mysql_error());
+		$selschoolNot = mysql_query("SELECT * FROM `tbschool` WHERE `status` = 0") or die  (mysql_error());
 ?>
 	<br>
 <?php include("include/header.php");?>
@@ -93,6 +97,27 @@ session_start();
   	  <div class="bg"><?php include("include/navbar.php");?>
   	  	<div align="center">
   	  		<div class="container">
+
+  	  		
+  	  		  <div class="hero-widget well well-sm">
+  	  		  <div class="row">
+  	  			 <div class="span4">
+                        <img src="img/glyphicons/png/glyphicons-21-home.png" class="img-rounded" width="40" height="40"><br>
+                        <h4><?php echo mysql_num_rows($selschool) - 1;?></h4>
+                        <label class="text-muted">โรงเรียนทั้งหมด</label>
+                </div>
+                <div class="span4">
+                		<img src="img/glyphicons/png/glyphicons-207-ok.png" class="img-rounded" width="40" height="40"><br>
+                        <h4><?php echo mysql_num_rows($selschoolOK);?></h4>
+                        <label class="text-muted">ยืนยันข้อมูลแล้ว</label>
+                </div>
+                <div class="span4">
+                		<img src="img/glyphicons/png/glyphicons-208-remove.png" class="img-rounded" width="40" height="40"><br>
+                        <h4><?php echo mysql_num_rows($selschoolNot) - 1;?></h4>
+                        <label class="text-muted">ยังไม่ได้ยืนยันข้อมูล</label>
+                </div>
+              </div>
+            </div>
 
 <table width="100%" class="table table-bordered">
   	<tr>

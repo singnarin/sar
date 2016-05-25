@@ -1,6 +1,5 @@
 <?php 
 include("include/connect.php");
-$selc6 = mysql_query("SELECT *, SUM(6_1) AS total6_1, SUM(6_2) AS total6_2, SUM(6_3) AS total6_3, SUM(6_4) AS total6_4, SUM(6_5) AS total6_5, SUM(6_6) AS total6_6, SUM(6_7) AS total6_7 FROM `c6` ");
-$c6num = mysql_num_rows($selc6);
-echo $c6num;
+$selc3 = mysql_fetch_array(mysql_query("SELECT SUM(3_4_5) AS total3_4_5 FROM `c3` ")) or die  (mysql_error());
+echo $selc3["total3_4_5"];
 ?>

@@ -9,7 +9,7 @@ if($schoolResult["status"]==1){
 }else{
 $b10num = mysql_num_rows(mysql_query("SELECT * FROM `b10` WHERE `schoolid` = '".$_SESSION['ses_username']."'"));
 if ($b10num > 0) {
-		mysql_query("UPDATE `b10` SET `10_1` = '".$_POST["txt10_1"]."',`10_2` = '".$_POST["txt10_2"]."',`10_3` = '".$_POST["txt10_3"]."',`10_4` = '".$_POST["txt10_4"]."',`10_5` = '".$_POST["txt10_5"]."',`10_6` = '".$_POST["txt10_6"]."'") or die (mysql_error());
+		mysql_query("UPDATE `b10` SET `10_1` = '".$_POST["txt10_1"]."',`10_2` = '".$_POST["txt10_2"]."',`10_3` = '".$_POST["txt10_3"]."',`10_4` = '".$_POST["txt10_4"]."',`10_5` = '".$_POST["txt10_5"]."',`10_6` = '".$_POST["txt10_6"]."' WHERE `schoolid` = '".$_SESSION['ses_username']."'") or die (mysql_error());
 }else{
 		mysql_query("insert into b10(schoolid, `10_1`,`10_2`,`10_3`,`10_4`,`10_5`,`10_6`) values ('".$_SESSION['ses_username']."','".$_POST["txt10_1"]."','".$_POST["txt10_2"]."','".$_POST["txt10_3"]."','".$_POST["txt10_4"]."','".$_POST["txt10_5"]."','".$_POST["txt10_6"]."')") or die(mysql_error());
 }

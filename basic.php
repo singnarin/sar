@@ -391,7 +391,7 @@ session_start();
 				<td><div align="center"><?php echo $basic1; ?></div></td>
 				<td><div align="center">
 				<?php
-					$score = array_sum(array($score1_1,$score1_2,$score1_3,$score1_4));
+					$score = array_sum(array($score1_1,$score1_2,$score1_3,$score1_4,$score1_5,$score1_6));
   					include("score5.php");
   					echo $grade;
   					unset($grade);

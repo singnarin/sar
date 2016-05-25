@@ -87,7 +87,7 @@ session_start();
 	if ($_SESSION['ses_username']=="56010000"){	
 			if ($_POST['txtschoolid']!=""){					
 				if ($_POST['txtschoolid']=="56010000") {
-					echo "<meta http-equiv='refresh' content='0;URL=childhood1admin.php'>";
+					echo "<meta http-equiv='refresh' content='0;URL=childhood3admin.php'>";
 				}else{
 		$schoolResult = mysql_fetch_array(mysql_query("SELECT * FROM `tbschool` WHERE `schoolid` = '".$_POST['txtschoolid']."'")) or die  (mysql_error());
 

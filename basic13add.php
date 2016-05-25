@@ -9,7 +9,7 @@ if($schoolResult["status"]==1){
 }else{
 $b13num = mysql_num_rows(mysql_query("SELECT * FROM `b13` WHERE `schoolid` = '".$_SESSION['ses_username']."'"));
 if ($b13num > 0) {
-		mysql_query("UPDATE `b13` SET `13_1` = '".$_POST["txt13_1"]."',`13_2` = '".$_POST["txt13_2"]."'") or die (mysql_error());
+		mysql_query("UPDATE `b13` SET `13_1` = '".$_POST["txt13_1"]."',`13_2` = '".$_POST["txt13_2"]."' WHERE `schoolid` = '".$_SESSION['ses_username']."'") or die (mysql_error());
 }else{
 		mysql_query("insert into b13(schoolid, `13_1`,`13_2`) values ('".$_SESSION['ses_username']."','".$_POST["txt13_1"]."','".$_POST["txt13_2"]."')") or die(mysql_error());
 }

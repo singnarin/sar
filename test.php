@@ -1,101 +1,100 @@
-<?php
-include("include/connect.php");
-session_start();
-		$b1num = mysql_num_rows(mysql_query("SELECT * FROM `b1` WHERE `schoolid` = '".$_SESSION['ses_username']."'"));
-		$b2num = mysql_num_rows(mysql_query("SELECT * FROM `b2` WHERE `schoolid` = '".$_SESSION['ses_username']."'"));
-		$b3num = mysql_num_rows(mysql_query("SELECT * FROM `b3` WHERE `schoolid` = '".$_SESSION['ses_username']."'"));
-		$b4num = mysql_num_rows(mysql_query("SELECT * FROM `b4` WHERE `schoolid` = '".$_SESSION['ses_username']."'"));
-		$b5num = mysql_num_rows(mysql_query("SELECT * FROM `b5` WHERE `schoolid` = '".$_SESSION['ses_username']."'"));
-		$b6num = mysql_num_rows(mysql_query("SELECT * FROM `b6` WHERE `schoolid` = '".$_SESSION['ses_username']."'"));
-		$b7num = mysql_num_rows(mysql_query("SELECT * FROM `b7` WHERE `schoolid` = '".$_SESSION['ses_username']."'"));
-		$b8num = mysql_num_rows(mysql_query("SELECT * FROM `b8` WHERE `schoolid` = '".$_SESSION['ses_username']."'"));
-		$b9num = mysql_num_rows(mysql_query("SELECT * FROM `b9` WHERE `schoolid` = '".$_SESSION['ses_username']."'"));
-		$b10num = mysql_num_rows(mysql_query("SELECT * FROM `b10` WHERE `schoolid` = '".$_SESSION['ses_username']."'"));
-		$b11num = mysql_num_rows(mysql_query("SELECT * FROM `b11` WHERE `schoolid` = '".$_SESSION['ses_username']."'"));
-		$b12num = mysql_num_rows(mysql_query("SELECT * FROM `b12` WHERE `schoolid` = '".$_SESSION['ses_username']."'"));
-		$b13num = mysql_num_rows(mysql_query("SELECT * FROM `b13` WHERE `schoolid` = '".$_SESSION['ses_username']."'"));
-		$b14num = mysql_num_rows(mysql_query("SELECT * FROM `b14` WHERE `schoolid` = '".$_SESSION['ses_username']."'"));
-		$b15num = mysql_num_rows(mysql_query("SELECT * FROM `b15` WHERE `schoolid` = '".$_SESSION['ses_username']."'"));
-		$teachernum = mysql_num_rows(mysql_query("SELECT * FROM `teacher` WHERE `schoolid` = '".$_SESSION['ses_username']."'"));
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This Source Code Form is subject to the terms of the Mozilla Public
+   - License, v. 2.0. If a copy of the MPL was not distributed with this
+   - file, You can obtain one at http://mozilla.org/MPL/2.0/. -->
+<!DOCTYPE html [
+  <!ENTITY % htmlDTD
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "DTD/xhtml1-strict.dtd">
+  %htmlDTD;
+  <!ENTITY % globalDTD SYSTEM "chrome://global/locale/global.dtd">
+  %globalDTD;
+  <!ENTITY % aboutHomeDTD SYSTEM "chrome://browser/locale/aboutHome.dtd">
+  %aboutHomeDTD;
+<!ENTITY % syncBrandDTD SYSTEM "chrome://browser/locale/syncBrand.dtd">
+%syncBrandDTD;
 
-	if ($b1num<1) {
-		if ($b1num<1) {
-			$b1echo = "ระดับพื้นฐาน มาตรฐานที่ 1 ยังไม่ได้บันทึกข้อมูล<br>";
-		}else {
-			$b1echo = "";
-		}
-		if ($b2num<1) {
-			$b2echo = "ระดับพื้นฐาน มาตรฐานที่ 2 ยังไม่ได้บันทึกข้อมูล<br>";
-		}else {
-			$b2echo = "";
-		}
-		if ($b3num<1) {
-			$b3echo = "ระดับพื้นฐาน มาตรฐานที่ 3 ยังไม่ได้บันทึกข้อมูล<br>";
-		}else {
-			$b3echo = "";
-		}
-		if ($b4num<1) {
-			$b4echo = "ระดับพื้นฐาน มาตรฐานที่ 4 ยังไม่ได้บันทึกข้อมูล<br>";
-		}else {
-			$b4echo = "";
-		}
-		if ($b5num<1) {
-			$b5echo = "ระดับพื้นฐาน มาตรฐานที่ 5 ยังไม่ได้บันทึกข้อมูล<br>";
-		}else {
-			$b5echo = "";
-		}
-		if ($b6num<1) {
-			$b6echo = "ระดับพื้นฐาน มาตรฐานที่ 6 ยังไม่ได้บันทึกข้อมูล<br>";
-		}else {
-			$b6echo = "";
-		}
-		if ($b7num<1) {
-			$b7echo = "ระดับพื้นฐาน มาตรฐานที่ 7 ยังไม่ได้บันทึกข้อมูล<br>";
-		}else {
-			$b7echo = "";
-		}
-		if ($b8num<1) {
-			$b8echo = "ระดับพื้นฐาน มาตรฐานที่ 8 ยังไม่ได้บันทึกข้อมูล<br>";
-		}else {
-			$b8echo = "";
-		}
-		if ($b9num<1) {
-			$b9echo = "ระดับพื้นฐาน มาตรฐานที่ 9 ยังไม่ได้บันทึกข้อมูล<br>";
-		}else {
-			$b9echo = "";
-		}
-		if ($b10num<1) {
-			$b10echo = "ระดับพื้นฐาน มาตรฐานที่ 10 ยังไม่ได้บันทึกข้อมูล<br>";
-		}else {
-			$b10echo = "";
-		}
-		if ($b11num<1) {
-			$b11echo = "ระดับพื้นฐาน มาตรฐานที่ 11 ยังไม่ได้บันทึกข้อมูล<br>";
-		}else {
-			$b11echo = "";
-		}
-		if ($b12num<1) {
-			$b12echo = "ระดับพื้นฐาน มาตรฐานที่ 12 ยังไม่ได้บันทึกข้อมูล<br>";
-		}else {
-			$b12echo = "";
-		}
-		if ($b13num<1) {
-			$b13echo = "ระดับพื้นฐาน มาตรฐานที่ 13 ยังไม่ได้บันทึกข้อมูล<br>";
-		}else {
-			$b13echo = "";
-		}
-		if ($b14num<1) {
-			$b14echo = "ระดับพื้นฐาน มาตรฐานที่ 14 ยังไม่ได้บันทึกข้อมูล<br>";
-		}else {
-			$b14echo = "";
-		}
-		if ($b15num<1) {
-			$b15echo = "ระดับพื้นฐาน มาตรฐานที่ 15 ยังไม่ได้บันทึกข้อมูล<br>";
-		}else {
-			$b15echo = "";
-		}			
-		echo $b1echo.$b2echo.$b3echo.$b4echo.$b5echo.$b6echo.$b7echo.$b8echo.$b9echo.$b10echo.$b11echo.$b12echo.$b13echo.$b14echo.$b15echo;
-	}else{
-		echo "<meta http-equiv='refresh' content='0;URL=basic.php'>";
-	}
-?>
+<!-- These strings are used in the about:home page -->
+
+<!ENTITY abouthome.pageTitle "&brandFullName; Start Page">
+
+<!-- LOCALIZATION NOTE (abouthome.defaultSnippet1.v1):
+     text in <a/> will be linked to the Firefox features page on mozilla.com
+-->
+<!ENTITY abouthome.defaultSnippet1.v1 "Thanks for choosing Firefox! To get the most out of your browser, learn more about the <a>latest features</a>.">
+<!-- LOCALIZATION NOTE (abouthome.defaultSnippet2.v1):
+     text in <a/> will be linked to the featured add-ons on addons.mozilla.org
+-->
+<!ENTITY abouthome.defaultSnippet2.v1 "It’s easy to customize your Firefox exactly the way you want it. <a>Choose from thousands of add-ons</a>.">
+<!-- LOCALIZATION NOTE (abouthome.rightsSnippet): text in <a/> will be linked to about:rights -->
+<!ENTITY abouthome.rightsSnippet "&brandFullName; is free and open source software from the non-profit Mozilla Foundation. <a>Know your rights…</a>">
+
+<!ENTITY abouthome.bookmarksButton.label "Bookmarks">
+<!ENTITY abouthome.historyButton.label   "History">
+<!-- LOCALIZATION NOTE (abouthome.preferencesButtonWin.label): The label for the
+     preferences/options item on about:home on Windows -->
+<!ENTITY abouthome.preferencesButtonWin.label  "Options">
+<!-- LOCALIZATION NOTE (abouthome.preferencesButtonUnix.label): The label for the
+     preferences/options item on about:home on Linux and OS X -->
+<!ENTITY abouthome.preferencesButtonUnix.label  "Preferences">
+<!ENTITY abouthome.addonsButton.label    "Add-ons">
+<!ENTITY abouthome.downloadsButton.label "Downloads">
+<!ENTITY abouthome.syncButton.label      "&syncBrand.shortName.label;">
+
+<!-- LOCALIZATION NOTE (abouthome.aboutMozilla.label): The (invisible) label for
+     the mozilla wordmark in the top-right corner that links to Mozilla's main
+     about page. -->
+<!ENTITY abouthome.aboutMozilla.label    "About Mozilla">
+
+  <!ENTITY % browserDTD SYSTEM "chrome://browser/locale/browser.dtd" >
+  %browserDTD;
+]>
+<html xmlns="http://www.w3.org/1999/xhtml" snippetsURL="https://snippets.cdn.mozilla.net/4/Firefox/48.0a2/20160524004015/WINNT_x86-msvc/en-US/aurora/Windows_NT%2010.0/default/default/" snippetsVersion="4">
+  <head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <title>Firefox Developer Edition Start Page</title>
+
+    <link rel="icon" type="image/png" id="favicon" href="chrome://branding/content/icon32.png" />
+    <link rel="stylesheet" type="text/css" media="all" href="test_files/contentSearchUI.css" />
+    <link rel="stylesheet" type="text/css" media="all" defer="defer" href="test_files/aboutHome.css" />
+
+    <script type="text/javascript;version=1.8" src="test_files/aboutHome.js"></script>
+    <script type="text/javascript;version=1.8" src="test_files/contentSearchUI.js"></script>
+  </head>
+
+  <body dir="ltr">
+    <div class="spacer"></div>
+    <div id="topSection">
+      <div id="brandLogo"></div>
+
+      <div id="searchIconAndTextContainer">
+        <div id="searchIcon"></div>
+        <input type="text" name="q" id="searchText" maxlength="256" aria-label="Search query" autofocus="autofocus" dir="auto" autocomplete="off" aria-autocomplete="true" aria-controls="searchSuggestionTable" aria-expanded="false" placeholder="Search" />
+        <input type="button" id="searchSubmit" value="" onclick="onSearchSubmit(event)" aria-label="Submit search" />
+      <table hidden="" id="searchSuggestionTable" class="contentSearchSuggestionTable" role="presentation"><tr class="contentSearchHeaderRow"><td class="contentSearchHeader" id="contentSearchDefaultEngineHeader"><img src="blob:null/29279451-ff36-45c2-ad1d-7889c044ef90" />Google Search</td></tr><tr class="contentSearchSuggestionsContainer"><td class="contentSearchSuggestionsContainer"><table class="contentSearchSuggestionsList" role="listbox"></table></td></tr><table class="contentSearchOneOffsTable contentSearchSuggestionsContainer" role="group"><tr class="contentSearchHeaderRow"><td class="contentSearchHeader" id="contentSearchSearchWithHeader">Search with:</td></tr></table><button class="contentSearchSettingsButton contentSearchHeaderRow contentSearchHeader" id="contentSearchSettingsButton" aria-selected="false">Change Search Settings</button></table></div>
+
+      <div id="snippetContainer">
+        <div hidden="true" id="defaultSnippets">
+          
+          <span id="defaultSnippet2">It’s easy to customize your Firefox exactly the way you want it. <a>Choose from thousands of add-ons</a>.</span>
+        </div>
+        <span hidden="true" id="rightsSnippet">Firefox Developer Edition is free and open source software from the non-profit Mozilla Foundation. <a>Know your rights…</a></span>
+        <div id="snippets"><span id="defaultSnippet1">Thanks for choosing Firefox! To get the most out of your browser, learn more about the <a href="https://www.mozilla.org/firefox/features/?utm_source=snippet&amp;utm_medium=snippet&amp;utm_campaign=default+feature+snippet">latest features</a>.</span></div>
+      </div>
+    </div>
+    <div class="spacer"></div>
+
+    <div id="launcher" session="true">
+      <button class="launchButton" id="downloads">Downloads</button>
+      <button class="launchButton" id="bookmarks">Bookmarks</button>
+      <button class="launchButton" id="history">History</button>
+      <button class="launchButton" id="addons">Add-ons</button>
+      <button class="launchButton" id="sync">Sync</button>
+      <button class="launchButton" id="settings">Options</button>
+      <div id="restorePreviousSessionSeparator"></div>
+      <button class="launchButton" id="restorePreviousSession">Restore Previous Session</button>
+    </div>
+
+    <a id="aboutMozilla" href="https://www.mozilla.org/about/?utm_source=about-home&amp;utm_medium=Referral" aria-label="About Mozilla"></a>
+  </body>
+</html>

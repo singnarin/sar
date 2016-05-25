@@ -9,7 +9,7 @@ if($schoolResult["status"]==1){
 }else{
 $c6num = mysql_num_rows(mysql_query("SELECT * FROM `c6` WHERE `schoolid` = '".$_SESSION['ses_username']."'"));
 if ($c6num > 0) {
-		mysql_query("UPDATE `c6` SET `6_1` = '".$_POST["txt6_1"]."',`6_2` = '".$_POST["txt6_2"]."',`6_3` = '".$_POST["txt6_3"]."',`6_4` = '".$_POST["txt6_4"]."',`6_5` = '".$_POST["txt6_5"]."',`6_6` = '".$_POST["txt6_6"]."',`6_7` = '".$_POST["txt6_7"]."'") or die (mysql_error());
+		mysql_query("UPDATE `c6` SET `6_1` = '".$_POST["txt6_1"]."',`6_2` = '".$_POST["txt6_2"]."',`6_3` = '".$_POST["txt6_3"]."',`6_4` = '".$_POST["txt6_4"]."',`6_5` = '".$_POST["txt6_5"]."',`6_6` = '".$_POST["txt6_6"]."',`6_7` = '".$_POST["txt6_7"]."' WHERE `schoolid` = '".$_SESSION['ses_username']."'") or die (mysql_error());
 }else{
 		mysql_query("insert into c6(schoolid, `6_1`,`6_2`,`6_3`,`6_4`,`6_5`,`6_6`,`6_7`) values ('".$_SESSION['ses_username']."','".$_POST["txt6_1"]."','".$_POST["txt6_2"]."','".$_POST["txt6_3"]."','".$_POST["txt6_4"]."','".$_POST["txt6_5"]."','".$_POST["txt6_6"]."','".$_POST["txt6_7"]."')") or die(mysql_error());
 }

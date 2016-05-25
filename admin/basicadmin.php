@@ -108,13 +108,14 @@ session_start();
 			$b4Result = mysql_fetch_array($selb4) or die  (mysql_error());
 		}
 		$selb5 = mysql_query("SELECT  SUM(5_1) AS total5_1, SUM(5_2) AS total5_2, SUM(5_3) AS total5_3, SUM(5_4) AS total5_4 FROM `b5` ");
-		$b5num = mysql_num_rows($selb5);
+		$res5 = mysql_fetch_array(mysql_query("SELECT COUNT(*) FROM b5"));
+		$b5num = $res5[0];
 		if ($b5num > 0) {
 			$b5Result = mysql_fetch_array($selb5) or die  (mysql_error());
-			$b5_1 = round($b5Result['total5_1'] / $b5num);
-			$b5_2 = round($b5Result['total5_2'] / $b5num);
-			$b5_3 = round($b5Result['total5_3'] / $b5num);
-			$b5_4 = round($b5Result['total5_4'] / $b5num);
+			$b5_1 = $b5Result['total5_1'] / $b5num;
+			$b5_2 = $b5Result['total5_2'] / $b5num;
+			$b5_3 = $b5Result['total5_3'] / $b5num;
+			$b5_4 = $b5Result['total5_4'] / $b5num;
 		}
 		$selb6 = mysql_query("SELECT SUM(6_1_1) AS total6_1_1,SUM(6_1_2) AS total6_1_2,SUM(6_1_3) AS total6_1_3,SUM(6_1_4) AS total6_1_4,SUM(6_1_5) AS total6_1_5,SUM(6_2_1) AS total6_2_1,SUM(6_2_2) AS total6_2_2,SUM(6_2_3) AS total6_2_3,SUM(6_2_4) AS total6_2_4,SUM(6_2_5) AS total6_2_5,SUM(6_3_1) AS total6_3_1,SUM(6_3_2) AS total6_3_2,SUM(6_3_3) AS total6_3_3,SUM(6_3_4) AS total6_3_4,SUM(6_3_5) AS total6_3_5,SUM(6_4_1) AS total6_4_1,SUM(6_4_2) AS total6_4_2,SUM(6_4_3) AS total6_4_3,SUM(6_4_4) AS total6_4_4,SUM(6_4_5) AS total6_4_5 FROM `b6` ");
 		$b6num = mysql_num_rows($selb6);
@@ -127,74 +128,82 @@ session_start();
 			$b7Result = mysql_fetch_array($selb7) or die  (mysql_error());
 		}
 		$selb8 = mysql_query("SELECT  SUM(8_1) AS total8_1, SUM(8_2) AS total8_2, SUM(8_3) AS total8_3, SUM(8_4) AS total8_4, SUM(8_5) AS total8_5, SUM(8_6) AS total8_6 FROM `b8` ");
-		$b8num = mysql_num_rows($selb8);
+		$res8= mysql_fetch_array(mysql_query("SELECT COUNT(*) FROM b8"));
+		$b8num = $res8[0];
 		if ($b8num > 0) {
 			$b8Result = mysql_fetch_array($selb8) or die  (mysql_error());
-			$b8_1 = round($b8Result['total8_1'] / $b8num);
-			$b8_2 = round($b8Result['total8_2'] / $b8num);
-			$b8_3 = round($b8Result['total8_3'] / $b8num);
-			$b8_4 = round($b8Result['total8_4'] / $b8num);
-			$b8_5 = round($b8Result['total8_5'] / $b8num);
-			$b8_6 = round($b8Result['total8_6'] / $b8num);
+			$b8_1 = $b8Result['total8_1'] / $b8num;
+			$b8_2 = $b8Result['total8_2'] / $b8num;
+			$b8_3 = $b8Result['total8_3'] / $b8num;
+			$b8_4 = $b8Result['total8_4'] / $b8num;
+			$b8_5 = $b8Result['total8_5'] / $b8num;
+			$b8_6 = $b8Result['total8_6'] / $b8num;
 		}
 		$selb9 = mysql_query("SELECT  SUM(9_1) AS total9_1, SUM(9_2) AS total9_2, SUM(9_3) AS total9_3 FROM `b9` ");
-		$b9num = mysql_num_rows($selb9);
+		$res9 = mysql_fetch_array(mysql_query("SELECT COUNT(*) FROM b9"));
+		$b9num = $res9[0];
 		if ($b9num > 0) {
 			$b9Result = mysql_fetch_array($selb9) or die  (mysql_error());
-			$b9_1 = round($b9Result['total9_1'] / $b9num);
-			$b9_2 = round($b9Result['total9_2'] / $b9num);
-			$b9_3 = round($b9Result['total9_3'] / $b9num);
+			$b9_1 = $b9Result['total9_1'] / $b9num;
+			$b9_2 = $b9Result['total9_2'] / $b9num;
+			$b9_3 = $b9Result['total9_3'] / $b9num;
 		}
 		$selb10 = mysql_query("SELECT  SUM(10_1) AS total10_1, SUM(10_2) AS total10_2, SUM(10_3) AS total10_3, SUM(10_4) AS total10_4, SUM(10_5) AS total10_5, SUM(10_6) AS total10_6 FROM `b10` ");
-		$b10num = mysql_num_rows($selb10);
+		$res10 = mysql_fetch_array(mysql_query("SELECT COUNT(*) FROM b10"));
+		$b10num = $res10[0];
 		if ($b10num > 0) {
 			$b10Result = mysql_fetch_array($selb10) or die  (mysql_error());
-			$b10_1 = round($b10Result['total10_1'] / $b10num);
-			$b10_2 = round($b10Result['total10_2'] / $b10num);
-			$b10_3 = round($b10Result['total10_3'] / $b10num);
-			$b10_4 = round($b10Result['total10_4'] / $b10num);
-			$b10_5 = round($b10Result['total10_5'] / $b10num);
-			$b10_6 = round($b10Result['total10_6'] / $b10num);
+			$b10_1 = $b10Result['total10_1'] / $b10num;
+			$b10_2 = $b10Result['total10_2'] / $b10num;
+			$b10_3 = $b10Result['total10_3'] / $b10num;
+			$b10_4 = $b10Result['total10_4'] / $b10num;
+			$b10_5 = $b10Result['total10_5'] / $b10num;
+			$b10_6 = $b10Result['total10_6'] / $b10num;
 		}
 		$selb11 = mysql_query("SELECT  SUM(11_1) AS total11_1,SUM(11_2) AS total11_2,SUM(11_3) AS total11_3 FROM `b11` ");
-		$b11num = mysql_num_rows($selb11);
+		$res11 = mysql_fetch_array(mysql_query("SELECT COUNT(*) FROM b11"));
+		$b11num = $res11[0];
 		if ($b11num > 0) {
 			$b11Result = mysql_fetch_array($selb11) or die  (mysql_error());
-			$b11_1 = round($b11Result['total11_1'] / $b11num);
-			$b11_2 = round($b11Result['total11_2'] / $b11num);
-			$b11_3 = round($b11Result['total11_3'] / $b11num);
+			$b11_1 = $b11Result['total11_1'] / $b11num;
+			$b11_2 = $b11Result['total11_2'] / $b11num;
+			$b11_3 = $b11Result['total11_3'] / $b11num;
 		}
 		$selb12 = mysql_query("SELECT  SUM(12_1) AS total12_1, SUM(12_2) AS total12_2, SUM(12_3) AS total12_3, SUM(12_4) AS total12_4, SUM(12_5) AS total12_5, SUM(12_6) AS total12_6 FROM `b12` ");
-		$b12num = mysql_num_rows($selb12);
+		$res12 = mysql_fetch_array(mysql_query("SELECT COUNT(*) FROM b12"));
+		$b12num = $res12[0];
 		if ($b12num > 0) {
 			$b12Result = mysql_fetch_array($selb12) or die  (mysql_error());
-			$b12_1 = round($b12Result['total12_1'] / $b12num);
-			$b12_2 = round($b12Result['total12_2'] / $b12num);
-			$b12_3 = round($b12Result['total12_3'] / $b12num);
-			$b12_4 = round($b12Result['total12_4'] / $b12num);
-			$b12_5 = round($b12Result['total12_5'] / $b12num);
-			$b12_6 = round($b12Result['total12_6'] / $b12num);
+			$b12_1 = $b12Result['total12_1'] / $b12num;
+			$b12_2 = $b12Result['total12_2'] / $b12num;
+			$b12_3 = $b12Result['total12_3'] / $b12num;
+			$b12_4 = $b12Result['total12_4'] / $b12num;
+			$b12_5 = $b12Result['total12_5'] / $b12num;
+			$b12_6 = $b12Result['total12_6'] / $b12num;
 		}
 		$selb13 = mysql_query("SELECT  SUM(13_1) AS total13_1, SUM(13_2) AS total13_2 FROM `b13` ");
-		$b13num = mysql_num_rows($selb13);
+		$res13 = mysql_fetch_array(mysql_query("SELECT COUNT(*) FROM b13"));
+		$b13num = $res13[0];
 		if ($b13num > 0) {
 			$b13Result = mysql_fetch_array($selb13) or die  (mysql_error());
-			$b13_1 = round($b13Result['total13_1'] / $b13num);
-			$b13_2 = round($b13Result['total13_2'] / $b13num);
+			$b13_1 = $b13Result['total13_1'] / $b13num;
+			$b13_2 = $b13Result['total13_2'] / $b13num;
 		}
 		$selb14 = mysql_query("SELECT  SUM(14_1) AS total14_1, SUM(14_2) AS total14_2 FROM `b14` ");
-		$b14num = mysql_num_rows($selb14);
+		$res14= mysql_fetch_array(mysql_query("SELECT COUNT(*) FROM b14"));
+		$b14num = $res14[0];
 		if ($b14num > 0) {
 			$b14Result = mysql_fetch_array($selb14) or die  (mysql_error());
-			$b14_1 = round($b14Result['total14_1'] / $b14num);
-			$b14_2 = round($b14Result['total14_2'] / $b14num);
+			$b14_1 = $b14Result['total14_1'] / $b14num;
+			$b14_2 = $b14Result['total14_2'] / $b14num;
 		}
 		$selb15 = mysql_query("SELECT  SUM(15_1) AS total15_1, SUM(15_2) AS total15_2 FROM `b15` ");
-		$b15num = mysql_num_rows($selb15);
+		$res15 = mysql_fetch_array(mysql_query("SELECT COUNT(*) FROM b15"));
+		$b15num = $res15[0];
 		if ($b15num > 0) {
 			$b15Result = mysql_fetch_array($selb15) or die  (mysql_error());
-			$b15_1 = round($b15Result['total15_1'] / $b15num);
-			$b15_2 = round($b15Result['total15_2'] / $b15num);
+			$b15_1 = $b15Result['total15_1'] / $b15num;
+			$b15_2 = $b15Result['total15_2'] / $b15num;
 		}
 
 		$selteacher = mysql_query("SELECT SUM(primaryhigh) AS totalprimaryhigh FROM `teacher` ");
@@ -267,10 +276,10 @@ session_start();
 		$score4_4 = round($persen4_4,2) * 1 / 100;
 		$basic4 = round(array_sum(array($score4_1,$score4_2,$score4_3,$score4_4)),2);
 
-		$score5_1 = $b5_1 * 1 / 5;
-		$score5_2 = $b5_2 * 1 / 5;
-		$score5_3 = $b5_3 * 2 / 5;
-		$score5_4 = $b5_4 * 1 / 5;
+		$score5_1 = round($b5_1 * 1 / 5,2);
+		$score5_2 = round($b5_2 * 1 / 5,2);
+		$score5_3 = round($b5_3 * 2 / 5,2);
+		$score5_4 = round($b5_4 * 1 / 5,2);
 		$basic5 = round(array_sum(array($score5_1,$score5_2,$score5_3,$score5_4)),2);
 
 		$up6_1 = array($b6Result['total6_1_3'],$b6Result['total6_1_4'],$b6Result['total6_1_5']);
@@ -318,56 +327,56 @@ session_start();
 		$score7_9 = round($persen7_9,2) * 1 / 100;
 		$basic7 = round(array_sum(array($score7_1,$score7_2,$score7_3,$score7_4,$score7_5,$score7_6,$score7_7,$score7_8,$score7_9)),2);
 
-		$score8_1 = $b8_1 * 1 / 5;
-		$score8_2 = $b8_2 * 2 / 5;
-		$score8_3 = $b8_3 * 2 / 5;
-		$score8_4 = $b8_4 * 2 / 5;
-		$score8_5 = $b8_5 * 1 / 5;
-		$score8_6 = $b8_6 * 2 / 5;
+		$score8_1 = round($b8_1 * 1 / 5,2);
+		$score8_2 = round($b8_2 * 2 / 5,2);
+		$score8_3 = round($b8_3 * 2 / 5,2);
+		$score8_4 = round($b8_4 * 2 / 5,2);
+		$score8_5 = round($b8_5 * 1 / 5,2);
+		$score8_6 = round($b8_6 * 2 / 5,2);
 		$basic8 = round(array_sum(array($score8_1,$score8_2,$score8_3,$score8_4,$score8_5,$score8_6)),2);
 
-		$score9_1 = $b9_1 * 2 / 5;
-		$score9_2 = $b9_2 * 1 / 5;
-		$score9_3 = $b9_3 * 2 / 5;
+		$score9_1 = round($b9_1 * 2 / 5,2);
+		$score9_2 = round($b9_2 * 1 / 5,2);
+		$score9_3 = round($b9_3 * 2 / 5,2);
 		$basic9 = round(array_sum(array($score9_1,$score9_2,$score9_3)),2);
 
-		$score10_1 = $b10_1 * 2 / 5;
-		$score10_2 = $b10_2 * 2 / 5;
-		$score10_3 = $b10_3 * 1 / 5;
-		$score10_4 = $b10_4 * 1 / 5;
-		$score10_5 = $b10_5 * 2 / 5;
-		$score10_6 = $b10_6 * 2 / 5;
+		$score10_1 = round($b10_1 * 2 / 5,2);
+		$score10_2 = round($b10_2 * 2 / 5,2);
+		$score10_3 = round($b10_3 * 1 / 5,2);
+		$score10_4 = round($b10_4 * 1 / 5,2);
+		$score10_5 = round($b10_5 * 2 / 5,2);
+		$score10_6 = round($b10_6 * 2 / 5,2);
 		$basic10 = round(array_sum(array($score10_1,$score10_2,$score10_3,$score10_4,$score10_5,$score10_6)),2);
 
-		$score11_1 = $b11_1 * 4 / 5;
-		$score11_2 = $b11_2 * 3 / 5;
-		$score11_3 = $b11_3 * 3 / 5;
+		$score11_1 = round($b11_1 * 4 / 5,2);
+		$score11_2 = round($b11_2 * 3 / 5,2);
+		$score11_3 = round($b11_3 * 3 / 5,2);
 		$basic11 = round(array_sum(array($score11_1,$score11_2,$score11_3)),2);
 
-		$score12_1 = $b12_1 * 1 / 5;
-		$score12_2 = $b12_2 * 1 / 5;
-		$score12_3 = $b12_3 * 1 / 5;
-		$score12_4 = $b12_4 * 0.5 / 5;
-		$score12_5 = $b12_5 * 0.5 / 5;
-		$score12_6 = $b12_6 * 1 / 5;
+		$score12_1 = round($b12_1 * 1 / 5,2);
+		$score12_2 = round($b12_2 * 1 / 5,2);
+		$score12_3 = round($b12_3 * 1 / 5,2);
+		$score12_4 = round($b12_4 * 0.5 / 5,2);
+		$score12_5 = round($b12_5 * 0.5 / 5,2);
+		$score12_6 = round($b12_6 * 1 / 5,2);
 		$basic12 = round(array_sum(array($score12_1,$score12_2,$score12_3,$score12_4,$score12_5,$score12_6)),2);
 
 		$side2 =  round(array_sum(array($basic7,$basic8,$basic9,$basic10,$basic11,$basic12)),2);
 
-		$score13_1 = $b13_1 * 5 / 5;
-		$score13_2 = $b13_2 * 5 / 5;
+		$score13_1 = round($b13_1 * 5 / 5,2);
+		$score13_2 = round($b13_2 * 5 / 5,2);
 		$basic13 = round(array_sum(array($score13_1,$score13_2)),2);
 
 		$side3 =  round(array_sum(array($basic13)),2);
 
-		$score14_1 = $b14_1* 3 / 5;
-		$score14_2 = $b14_2* 2 / 5;
+		$score14_1 = round($b14_1* 3 / 5,2);
+		$score14_2 = round($b14_2* 2 / 5,2);
 		$basic14 = round(array_sum(array($score14_1,$score14_2)),2);
 
 		$side4=  round(array_sum(array($basic14)),2);
 
-		$score15_1 = $b15_1 * 3 / 5;
-		$score15_2 = $b15_2 * 2 / 5;
+		$score15_1 = round($b15_1 * 3 / 5,2);
+		$score15_2 = round($b15_2 * 2 / 5,2);
 		$basic15 = round(array_sum(array($score15_1,$score15_2)),2);
 
 		$side5 =  round(array_sum(array($basic15)),2);
@@ -426,7 +435,7 @@ session_start();
 				<td><div align="center"><?php echo $basic1; ?></div></td>
 				<td><div align="center">
 				<?php
-					$score = array_sum(array($score1_1,$score1_2,$score1_3,$score1_4));
+					$score = array_sum(array($score1_1,$score1_2,$score1_3,$score1_4,$score1_5,$score1_6));
   					include("score5.php");
   					echo $grade;
   					unset($grade);
