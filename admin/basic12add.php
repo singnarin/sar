@@ -9,7 +9,7 @@ if($schoolResult["status"]==1){
 }else{
 $b12num = mysql_num_rows(mysql_query("SELECT * FROM `b12` WHERE `schoolid` = '".$_POST['txtschoolid']."'"));
 if ($b12num > 0) {
-		mysql_query("UPDATE `b12` SET `12_1` = '".$_POST["txt12_1"]."',`12_2` = '".$_POST["txt12_2"]."',`12_3` = '".$_POST["txt12_3"]."',`12_4` = '".$_POST["txt12_4"]."',`12_5` = '".$_POST["txt12_5"]."',`12_6` = '".$_POST["txt12_6"]."'") or die (mysql_error());
+		mysql_query("UPDATE `b12` SET `12_1` = '".$_POST["txt12_1"]."',`12_2` = '".$_POST["txt12_2"]."',`12_3` = '".$_POST["txt12_3"]."',`12_4` = '".$_POST["txt12_4"]."',`12_5` = '".$_POST["txt12_5"]."',`12_6` = '".$_POST["txt12_6"]."' WHERE `schoolid` = '".$_SESSION['ses_username']."'") or die (mysql_error());
 }else{
 		mysql_query("insert into b12(schoolid, `12_1`,`12_2`,`12_3`,`12_4`,`12_5`,`12_6`) values ('".$_POST['txtschoolid']."','".$_POST["txt12_1"]."','".$_POST["txt12_2"]."','".$_POST["txt12_3"]."','".$_POST["txt12_4"]."','".$_POST["txt12_5"]."','".$_POST["txt12_6"]."')") or die(mysql_error());
 }

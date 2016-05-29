@@ -9,7 +9,7 @@ if($schoolResult["status"]==1){
 }else{
 $c10num = mysql_num_rows(mysql_query("SELECT * FROM `c10` WHERE `schoolid` = '".$_POST['txtschoolid']."'"));
 if ($c10num > 0) {
-		mysql_query("UPDATE `c10` SET `10_1` = '".$_POST["txt10_1"]."',`10_2` = '".$_POST["txt10_2"]."'") or die (mysql_error());
+		mysql_query("UPDATE `c10` SET `10_1` = '".$_POST["txt10_1"]."',`10_2` = '".$_POST["txt10_2"]."' WHERE `schoolid` = '".$_SESSION['ses_username']."'") or die (mysql_error());
 }else{
 		mysql_query("insert into c10(schoolid, `10_1`,`10_2`) values ('".$_POST['txtschoolid']."','".$_POST["txt10_1"]."','".$_POST["txt10_2"]."')") or die(mysql_error());
 }
