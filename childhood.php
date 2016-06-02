@@ -94,27 +94,117 @@ session_start();
 		if ($c1num > 0) {
 			$c1Result = mysql_fetch_array($selc1) or die  (mysql_error());
 		}
+		$up1_1 = array($c1Result['1_1_3'],$c1Result['1_1_4'],$c1Result['1_1_5']);
+		$persen1_1 = number_format(array_sum($up1_1) * 100 / $sumo, 2, '.', '');
+		$score1_1 = round($persen1_1,2) * 1.0 / 100;
+		$up1_2 = array($c1Result['1_2_3'],$c1Result['1_2_4'],$c1Result['1_2_5']);
+		$persen1_2 = number_format(array_sum($up1_2) * 100 / $sumo, 2, '.', '');
+		$score1_2 = round($persen1_2,2) * 1.5 / 100;
+		$up1_3 = array($c1Result['1_3_3'],$c1Result['1_3_4'],$c1Result['1_3_5']);
+		$persen1_3 = number_format(array_sum($up1_3) * 100 / $sumo, 2, '.', '');
+		$score1_3 = round($persen1_3,2) * 1.5 / 100;
+		$up1_4 = array($c1Result['1_4_3'],$c1Result['1_4_4'],$c1Result['1_4_5']);
+		$persen1_4 = number_format(array_sum($up1_4) * 100 / $sumo, 2, '.', '');
+		$score1_4 = round($persen1_4,2) * 1 / 100;
+		$child1 = round(array_sum(array($score1_1,$score1_2,$score1_3,$score1_4)),2);
+
 		$selc2 = mysql_query("SELECT * FROM `c2` WHERE `schoolid` = '".$_SESSION['ses_username']."'");
 		$c2num = mysql_num_rows($selc2);
 		if ($c2num > 0) {
 			$c2Result = mysql_fetch_array($selc2) or die  (mysql_error());
 		}
+		$up2_1 = array($c2Result['2_1_3'],$c2Result['2_1_4'],$c2Result['2_1_5']);
+		$persen2_1 = number_format(array_sum($up2_1) * 100 / $sumo, 2, '.', '');
+		$score2_1 = round($persen2_1,2) * 1 / 100;
+		$up2_2 = array($c2Result['2_2_3'],$c2Result['2_2_4'],$c2Result['2_2_5']);
+		$persen2_2 = number_format(array_sum($up2_2) * 100 / $sumo, 2, '.', '');
+		$score2_2 = round($persen2_2,2) * 1 / 100;
+		$up2_3 = array($c2Result['2_3_3'],$c2Result['2_3_4'],$c2Result['2_3_5']);
+		$persen2_3 = number_format(array_sum($up2_3) * 100 / $sumo, 2, '.', '');
+		$score2_3 = round($persen2_3,2) * 1 / 100;
+		$up2_4 = array($c2Result['2_4_3'],$c2Result['2_4_4'],$c2Result['2_4_5']);
+		$persen2_4 = number_format(array_sum($up2_4) * 100 / $sumo, 2, '.', '');
+		$score2_4 = round($persen2_4,2) * 2 / 100;
+		$child2 = round(array_sum(array($score2_1,$score2_2,$score2_3,$score2_4)),2);
+
 		$selc3 = mysql_query("SELECT * FROM `c3` WHERE `schoolid` = '".$_SESSION['ses_username']."'");
 		$c3num = mysql_num_rows($selc3);
 		if ($c3num > 0) {
 			$c3Result = mysql_fetch_array($selc3) or die  (mysql_error());
 		}
+		$up3_1 = array($c3Result['3_1_3'],$c3Result['3_1_4'],$c3Result['3_1_5']);
+		$persen3_1 = number_format(array_sum($up3_1) * 100 / $sumo, 2, '.', '');
+		$score3_1 = round($persen3_1,2) * 2 / 100;
+		$up3_2 = array($c3Result['3_2_3'],$c3Result['3_2_4'],$c3Result['3_2_5']);
+		$persen3_2 = number_format(array_sum($up3_2) * 100 / $sumo, 2, '.', '');
+		$score3_2 = round($persen3_2,2) * 1 / 100;
+		$up3_3 = array($c3Result['3_3_3'],$c3Result['3_3_4'],$c3Result['3_3_5']);
+		$persen3_3 = number_format(array_sum($up3_3) * 100 / $sumo, 2, '.', '');
+		$score3_3 = round($persen3_3,2) * 1 / 100;
+		$up3_4 = array($c3Result['3_4_3'],$c3Result['3_4_4'],$c3Result['3_4_5']);
+		$persen3_4 = number_format(array_sum($up3_4) * 100 / $sumo, 2, '.', '');
+		$score3_4 = round($persen3_4,2) * 1 / 100;
+		$child3 = round(array_sum(array($score3_1,$score3_2,$score3_3,$score3_4)),2);
 
 		$selc4 = mysql_query("SELECT * FROM `c4` WHERE `schoolid` = '".$_SESSION['ses_username']."'");
 		$c4num = mysql_num_rows($selc4);
 		if ($c4num > 0) {
 			$c4Result = mysql_fetch_array($selc4) or die  (mysql_error());
 		}
+		$up4_1 = array($c4Result['4_1_3'],$c4Result['4_1_4'],$c4Result['4_1_5']);
+		$persen4_1 = number_format(array_sum($up4_1) * 100 / $sumo, 2, '.', '');
+		$score4_1 = round($persen4_1,2) * 1 / 100;
+		$up4_2 = array($c4Result['4_2_3'],$c4Result['4_2_4'],$c4Result['4_2_5']);
+		$persen4_2 = number_format(array_sum($up4_2) * 100 / $sumo, 2, '.', '');
+		$score4_2 = round($persen4_2,2) * 1 / 100;
+		$up4_3 = array($c4Result['4_3_3'],$c4Result['4_3_4'],$c4Result['4_3_5']);
+		$persen4_3 = number_format(array_sum($up4_3) * 100 / $sumo, 2, '.', '');
+		$score4_3 = round($persen4_3,2) * 1 / 100;
+		$up4_4 = array($c4Result['4_4_3'],$c4Result['4_4_4'],$c4Result['4_4_5']);
+		$persen4_4 = number_format(array_sum($up4_4) * 100 / $sumo, 2, '.', '');
+		$score4_4 = round($persen4_4,2) * 1 / 100;
+		$up4_5 = array($c4Result['4_5_3'],$c4Result['4_5_4'],$c4Result['4_5_5']);
+		$persen4_5 = number_format(array_sum($up4_5) * 100 / $sumo, 2, '.', '');
+		$score4_5 = round($persen4_5,2) * 1 / 100;
+		$child4 = round(array_sum(array($score4_1,$score4_2,$score4_3,$score4_4,$score4_5)),2);
+
 		$selc5 = mysql_query("SELECT * FROM `c5` WHERE `schoolid` = '".$_SESSION['ses_username']."'");
 		$c5num = mysql_num_rows($selc5);
 		if ($c5num > 0) {
 			$c5Result = mysql_fetch_array($selc5) or die  (mysql_error());
 		}
+		$up5_1 = array($c5Result['5_1_3'],$c5Result['5_1_4'],$c5Result['5_1_5']);
+		$persen5_1 = number_format(array_sum($up5_1) * 100 / $teacherResult["childteacher"], 2, '.', '');
+		$score5_1 = round($persen5_1,2) * 2 / 100;
+		$up5_2 = array($c5Result['5_2_3'],$c5Result['5_2_4'],$c5Result['5_2_5']);
+		$persen5_2 = number_format(array_sum($up5_2) * 100 / $teacherResult["childteacher"], 2, '.', '');
+		$score5_2 = round($persen5_2,2) * 2 / 100;
+		$up5_3 = array($c5Result['5_3_3'],$c5Result['5_3_4'],$c5Result['5_3_5']);
+		$persen5_3 = number_format(array_sum($up5_3) * 100 / $teacherResult["childteacher"], 2, '.', '');
+		$score5_3 = round($persen5_3,2) * 2 / 100;
+		$up5_4 = array($c5Result['5_4_3'],$c5Result['5_4_4'],$c5Result['5_4_5']);
+		$persen5_4 = number_format(array_sum($up5_4) * 100 / $teacherResult["childteacher"], 2, '.', '');
+		$score5_4 = round($persen5_4,2) * 2 / 100;
+		$up5_5 = array($c5Result['5_5_3'],$c5Result['5_5_4'],$c5Result['5_5_5']);
+		$persen5_5 = number_format(array_sum($up5_5) * 100 / $teacherResult["childteacher"], 2, '.', '');
+		$score5_5 = round($persen5_5,2) * 2 / 100;
+		$up5_6 = array($c5Result['5_6_3'],$c5Result['5_6_4'],$c5Result['5_6_5']);
+		$persen5_6 = number_format(array_sum($up5_6) * 100 / $teacherResult["childteacher"], 2, '.', '');
+		$score5_6 = round($persen5_6,2) * 2 / 100;
+		$up5_7 = array($c5Result['5_7_3'],$c5Result['5_7_4'],$c5Result['5_7_5']);
+		$persen5_7 = number_format(array_sum($up5_7) * 100 / $teacherResult["childteacher"], 2, '.', '');
+		$score5_7 = round($persen5_7,2) * 2 / 100;
+		$up5_8 = array($c5Result['5_8_3'],$c5Result['5_8_4'],$c5Result['5_8_5']);
+		$persen5_8 = number_format(array_sum($up5_8) * 100 / $teacherResult["childteacher"], 2, '.', '');
+		$score5_8 = round($persen5_8,2) * 2 / 100;
+		$up5_9 = array($c5Result['5_9_3'],$c5Result['5_9_4'],$c5Result['5_9_5']);
+		$persen5_9 = number_format(array_sum($up5_9) * 100 / $teacherResult["childteacher"], 2, '.', '');
+		$score5_9 = round($persen5_9,2) * 2 / 100;
+		$up5_10 = array($c5Result['5_10_3'],$c5Result['5_10_4'],$c5Result['5_10_5']);
+		$persen5_10 = number_format(array_sum($up5_10) * 100 / $teacherResult["childteacher"], 2, '.', '');
+		$score5_10 = round($persen5_10,2) * 2 / 100;
+		$child5 = round(array_sum(array($score5_1,$score5_2,$score5_3,$score5_4,$score5_5,$score5_6,$score5_7,$score5_8,$score5_9,$score5_10)),2);
+
 		$selc6 = mysql_query("SELECT * FROM `c6` WHERE `schoolid` = '".$_SESSION['ses_username']."'");
 		$c6num = mysql_num_rows($selc6);
 		if ($c6num > 0) {
@@ -156,100 +246,9 @@ session_start();
 		$teachernum = mysql_num_rows($selteacher);
 		if ($teachernum > 0) {
 			$teacherResult = mysql_fetch_array($selteacher) or die  (mysql_error());
-		}		
-
-		$up1_1 = array($c1Result['1_1_3'],$c1Result['1_1_4'],$c1Result['1_1_5']);
-		$persen1_1 = number_format(array_sum($up1_1) * 100 / $sumo, 2, '.', '');
-		$score1_1 = round($persen1_1,2) * 1.0 / 100;
-		$up1_2 = array($c1Result['1_2_3'],$c1Result['1_2_4'],$c1Result['1_2_5']);
-		$persen1_2 = number_format(array_sum($up1_2) * 100 / $sumo, 2, '.', '');
-		$score1_2 = round($persen1_2,2) * 1.5 / 100;
-		$up1_3 = array($c1Result['1_3_3'],$c1Result['1_3_4'],$c1Result['1_3_5']);
-		$persen1_3 = number_format(array_sum($up1_3) * 100 / $sumo, 2, '.', '');
-		$score1_3 = round($persen1_3,2) * 1.5 / 100;
-		$up1_4 = array($c1Result['1_4_3'],$c1Result['1_4_4'],$c1Result['1_4_5']);
-		$persen1_4 = number_format(array_sum($up1_4) * 100 / $sumo, 2, '.', '');
-		$score1_4 = round($persen1_4,2) * 1 / 100;
-		$child1 = round(array_sum(array($score1_1,$score1_2,$score1_3,$score1_4)),2);
-
-		$up2_1 = array($c2Result['2_1_3'],$c2Result['2_1_4'],$c2Result['2_1_5']);
-		$persen2_1 = number_format(array_sum($up2_1) * 100 / $sumo, 2, '.', '');
-		$score2_1 = round($persen2_1,2) * 1 / 100;
-		$up2_2 = array($c2Result['2_2_3'],$c2Result['2_2_4'],$c2Result['2_2_5']);
-		$persen2_2 = number_format(array_sum($up2_2) * 100 / $sumo, 2, '.', '');
-		$score2_2 = round($persen2_2,2) * 1 / 100;
-		$up2_3 = array($c2Result['2_3_3'],$c2Result['2_3_4'],$c2Result['2_3_5']);
-		$persen2_3 = number_format(array_sum($up2_3) * 100 / $sumo, 2, '.', '');
-		$score2_3 = round($persen2_3,2) * 1 / 100;
-		$up2_4 = array($c2Result['2_4_3'],$c2Result['2_4_4'],$c2Result['2_4_5']);
-		$persen2_4 = number_format(array_sum($up2_4) * 100 / $sumo, 2, '.', '');
-		$score2_4 = round($persen2_4,2) * 2 / 100;
-		$child2 = round(array_sum(array($score2_1,$score2_2,$score2_3,$score2_4)),2);
-
-		$up3_1 = array($c3Result['3_1_3'],$c3Result['3_1_4'],$c3Result['3_1_5']);
-		$persen3_1 = number_format(array_sum($up3_1) * 100 / $sumo, 2, '.', '');
-		$score3_1 = round($persen3_1,2) * 2 / 100;
-		$up3_2 = array($c3Result['3_2_3'],$c3Result['3_2_4'],$c3Result['3_2_5']);
-		$persen3_2 = number_format(array_sum($up3_2) * 100 / $sumo, 2, '.', '');
-		$score3_2 = round($persen3_2,2) * 1 / 100;
-		$up3_3 = array($c3Result['3_3_3'],$c3Result['3_3_4'],$c3Result['3_3_5']);
-		$persen3_3 = number_format(array_sum($up3_3) * 100 / $sumo, 2, '.', '');
-		$score3_3 = round($persen3_3,2) * 1 / 100;
-		$up3_4 = array($c3Result['3_4_3'],$c3Result['3_4_4'],$c3Result['3_4_5']);
-		$persen3_4 = number_format(array_sum($up3_4) * 100 / $sumo, 2, '.', '');
-		$score3_4 = round($persen3_4,2) * 1 / 100;
-		$child3 = round(array_sum(array($score3_1,$score3_2,$score3_3,$score3_4)),2);
-
-		$up4_1 = array($c4Result['4_1_3'],$c4Result['4_1_4'],$c4Result['4_1_5']);
-		$persen4_1 = number_format(array_sum($up4_1) * 100 / $sumo, 2, '.', '');
-		$score4_1 = round($persen4_1,2) * 1 / 100;
-		$up4_2 = array($c4Result['4_2_3'],$c4Result['4_2_4'],$c4Result['4_2_5']);
-		$persen4_2 = number_format(array_sum($up4_2) * 100 / $sumo, 2, '.', '');
-		$score4_2 = round($persen4_2,2) * 1 / 100;
-		$up4_3 = array($c4Result['4_3_3'],$c4Result['4_3_4'],$c4Result['4_3_5']);
-		$persen4_3 = number_format(array_sum($up4_3) * 100 / $sumo, 2, '.', '');
-		$score4_3 = round($persen4_3,2) * 1 / 100;
-		$up4_4 = array($c4Result['4_4_3'],$c4Result['4_4_4'],$c4Result['4_4_5']);
-		$persen4_4 = number_format(array_sum($up4_4) * 100 / $sumo, 2, '.', '');
-		$score4_4 = round($persen4_4,2) * 1 / 100;
-		$up4_5 = array($c4Result['4_5_3'],$c4Result['4_5_4'],$c4Result['4_5_5']);
-		$persen4_5 = number_format(array_sum($up4_5) * 100 / $sumo, 2, '.', '');
-		$score4_5 = round($persen4_5,2) * 1 / 100;
-		$child4 = round(array_sum(array($score4_1,$score4_2,$score4_3,$score4_4,$score4_5)),2);
+		}	
 
 		$side1 = round(array_sum(array($child1,$child2,$child3,$child4)),2);
-
-		$up5_1 = array($c5Result['5_1_3'],$c5Result['5_1_4'],$c5Result['5_1_5']);
-		$persen5_1 = number_format(array_sum($up5_1) * 100 / $teacherResult["childteacher"], 2, '.', '');
-		$score5_1 = round($persen5_1,2) * 2 / 100;
-		$up5_2 = array($c5Result['5_2_3'],$c5Result['5_2_4'],$c5Result['5_2_5']);
-		$persen5_2 = number_format(array_sum($up5_2) * 100 / $teacherResult["childteacher"], 2, '.', '');
-		$score5_2 = round($persen5_2,2) * 2 / 100;
-		$up5_3 = array($c5Result['5_3_3'],$c5Result['5_3_4'],$c5Result['5_3_5']);
-		$persen5_3 = number_format(array_sum($up5_3) * 100 / $teacherResult["childteacher"], 2, '.', '');
-		$score5_3 = round($persen5_3,2) * 2 / 100;
-		$up5_4 = array($c5Result['5_4_3'],$c5Result['5_4_4'],$c5Result['5_4_5']);
-		$persen5_4 = number_format(array_sum($up5_4) * 100 / $teacherResult["childteacher"], 2, '.', '');
-		$score5_4 = round($persen5_4,2) * 2 / 100;
-		$up5_5 = array($c5Result['5_5_3'],$c5Result['5_5_4'],$c5Result['5_5_5']);
-		$persen5_5 = number_format(array_sum($up5_5) * 100 / $teacherResult["childteacher"], 2, '.', '');
-		$score5_5 = round($persen5_5,2) * 2 / 100;
-		$up5_6 = array($c5Result['5_6_3'],$c5Result['5_6_4'],$c5Result['5_6_5']);
-		$persen5_6 = number_format(array_sum($up5_6) * 100 / $teacherResult["childteacher"], 2, '.', '');
-		$score5_6 = round($persen5_6,2) * 2 / 100;
-		$up5_7 = array($c5Result['5_7_3'],$c5Result['5_7_4'],$c5Result['5_7_5']);
-		$persen5_7 = number_format(array_sum($up5_7) * 100 / $teacherResult["childteacher"], 2, '.', '');
-		$score5_7 = round($persen5_7,2) * 2 / 100;
-		$up5_8 = array($c5Result['5_8_3'],$c5Result['5_8_4'],$c5Result['5_8_5']);
-		$persen5_8 = number_format(array_sum($up5_8) * 100 / $teacherResult["childteacher"], 2, '.', '');
-		$score5_8 = round($persen5_8,2) * 2 / 100;
-		$up5_9 = array($c5Result['5_9_3'],$c5Result['5_9_4'],$c5Result['5_9_5']);
-		$persen5_9 = number_format(array_sum($up5_9) * 100 / $teacherResult["childteacher"], 2, '.', '');
-		$score5_9 = round($persen5_9,2) * 2 / 100;
-		$up5_10 = array($c5Result['5_10_3'],$c5Result['5_10_4'],$c5Result['5_10_5']);
-		$persen5_10 = number_format(array_sum($up5_10) * 100 / $teacherResult["childteacher"], 2, '.', '');
-		$score5_10 = round($persen5_10,2) * 2 / 100;
-		$child5 = round(array_sum(array($score5_1,$score5_2,$score5_3,$score5_4,$score5_5,$score5_6,$score5_7,$score5_8,$score5_9,$score5_10)),2);
 
 		$scorec6_1 = $c6Result['6_1'] * 3 / 5;
 		$scorec6_2 = $c6Result['6_2'] * 3 / 5;
@@ -295,7 +294,7 @@ session_start();
 
 		$side5 = round(array_sum(array($child11)),2);
 
-		$childhoodScore =  round(array_sum(array($child10,$child9,$child8,$child7,$child6,$child5,$child4,$child3,$child2,$child1)),2);
+		$childhoodScore =  round(array_sum(array($child11,$child10,$child9,$child8,$child7,$child6,$child5,$child4,$child3,$child2,$child1)) * 100 / 65 ,2);
 
 ?>
 	<br>
@@ -513,7 +512,7 @@ session_start();
 				<td><div align="center"><?php echo $sumo;?></div></td>
 				<td><div align="center"><?php echo array_sum($up2_2); ?></div></td>
 				<td><div align="center"><?php echo $persen2_2; ?></div></td>
-				<td><div align="center">1.5</div></td>
+				<td><div align="center">1</div></td>
 				<td><div align="center">
 				<?php
 				$score = round($persen2_2,2) * 1 / 100;
@@ -563,7 +562,7 @@ session_start();
 				<td><div align="center"><?php echo array_sum($up2_4);?>
 				</div></td>
 				<td><div align="center"><?php echo $persen2_4;?></div></td>
-				<td><div align="center">2.0</div></td>
+				<td><div align="center">2</div></td>
 				<td><div align="center">
 				<?php
 				$score = round($persen2_4,2) * 2 / 100;
@@ -634,7 +633,7 @@ session_start();
 				<td><div align="center"><?php echo $sumo;?></div></td>
 				<td><div align="center"><?php echo array_sum($up3_2); ?></div></td>
 				<td><div align="center"><?php echo $persen3_2; ?></div></td>
-				<td><div align="center">1.5</div></td>
+				<td><div align="center">1</div></td>
 				<td><div align="center">
 				<?php
 				$score = round($persen3_2,2) * 1 / 100;
@@ -755,7 +754,7 @@ session_start();
 				<td><div align="center"><?php echo $sumo;?></div></td>
 				<td><div align="center"><?php echo array_sum($up4_2); ?></div></td>
 				<td><div align="center"><?php echo $persen4_2; ?></div></td>
-				<td><div align="center">1.5</div></td>
+				<td><div align="center">1</div></td>
 				<td><div align="center">
 				<?php
 				$score = round($persen4_2,2) * 1 / 100;

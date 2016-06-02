@@ -1,5 +1,9 @@
 <?php
-	if ($score < 2) {
+if ($score==0) {
+	$grade = "-" ;
+	$degree = "-" ;
+}else{
+	if ($score < 2 && $score !=0) {
 		$grade = 1;
 		$degree = "ปรับปรุง";
 	}else if ($score < 3) {
@@ -15,5 +19,6 @@
 		$grade = 5;
 		$degree = "ดีเยี่ยม";
 	}
+}
 unset($score);
 ?>
