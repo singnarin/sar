@@ -1,3 +1,4 @@
+<meta charset="UTF-8">
 <?php
 include("include/connect.php");
 session_start();
