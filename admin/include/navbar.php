@@ -29,7 +29,7 @@ $schoolResult = mysql_fetch_array(mysql_query("SELECT * FROM `tbschool` WHERE `s
       	 		<li ><a href='childhood9sel.php'>มาตรฐานที่ 9</a></li>
       	 		<li ><a href='childhood10sel.php'>มาตรฐานที่ 10</a></li>
       	 		<li ><a href='childhood11sel.php'>มาตรฐานที่ 11</a></li>
-            <li ><a href='exportchildhood1_11sel.php'>นำออกมาตรฐานที่1-11</a></li>
+            	<li ><a href='exportchildhood1_11sel.php'>นำออกมาตรฐานที่1-11</a></li>
       	 		<li ><a href='childhoodsel.php'>สรุประดับปฐมวัย</a></li>
               <!--
               <li class="divider"></li>
@@ -61,6 +61,9 @@ $schoolResult = mysql_fetch_array(mysql_query("SELECT * FROM `tbschool` WHERE `s
             <li><a href='basicsel.php'>สรุประดับพื้นฐาน</a></li>
             </ul>
           </li>
+        </ul>
+        <ul class="nav">
+          	<li class=""><a href="audit.php">ตรวจสอบข้อมูล</a></li>
         </ul>
         <ul class="nav">
           	<li class=""><a href="logout.php">ออกจากระบบ</a></li>
