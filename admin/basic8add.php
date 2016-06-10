@@ -9,7 +9,7 @@ if($schoolResult["status"]==1){
 }else{
 $b8num = mysql_num_rows(mysql_query("SELECT * FROM `b8` WHERE `schoolid` = '".$_POST['txtschoolid']."'"));
 if ($b8num > 0) {
-		mysql_query("UPDATE `b8` SET `8_1` = '".$_POST["txt8_1"]."',`8_2` = '".$_POST["txt8_2"]."',`8_3` = '".$_POST["txt8_3"]."',`8_4` = '".$_POST["txt8_4"]."',`8_5` = '".$_POST["txt8_5"]."',`8_6` = '".$_POST["txt8_6"]."' WHERE `schoolid` = '".$_SESSION['ses_username']."'") or die (mysql_error());
+		mysql_query("UPDATE `b8` SET `8_1` = '".$_POST["txt8_1"]."',`8_2` = '".$_POST["txt8_2"]."',`8_3` = '".$_POST["txt8_3"]."',`8_4` = '".$_POST["txt8_4"]."',`8_5` = '".$_POST["txt8_5"]."',`8_6` = '".$_POST["txt8_6"]."' WHERE `schoolid` = '".$_POST['txtschoolid']."'") or die (mysql_error());
 }else{
 		mysql_query("insert into b8(schoolid, `8_1`,`8_2`,`8_3`,`8_4`,`8_5`,`8_6`) values ('".$_POST['txtschoolid']."','".$_POST["txt8_1"]."','".$_POST["txt8_2"]."','".$_POST["txt8_3"]."','".$_POST["txt8_4"]."','".$_POST["txt8_5"]."','".$_POST["txt8_6"]."')") or die(mysql_error());
 }
